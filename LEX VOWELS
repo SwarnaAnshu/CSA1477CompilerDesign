@@ -1,0 +1,15 @@
+%{
+#include<stdio.h>
+int vowel_count=0;
+int cons_count=0;
+%}
+%%
+[a|e|i|o|u|A|E|I|O|U] {vowel_count++} {printf("\n%d is a VOWEL",vowel_count);}
+[a-zA-Z]{cons_count++} {printf("\n%d is cons",cons_count);}
+%%
+
+int yywrap(){}
+int main()
+{
+while(yylex());
+}
